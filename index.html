@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HomeHero | Licensed Home Services - 24/7 Direct Service Lines</title>
+<style>
+:root{--navy:#101828;--blue:#1e3a8a;--orange:#ff6b00;--orange2:#ff8c33;--bg:#fff;--soft:#f8f9fb;--text:#101828;--muted:#5b6478;--border:#e4e8f0;--peach:#fff4ea;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1220;--soft:#131b2e;--text:#eef2fa;--muted:#a6b1c8;--border:#25314d;--peach:#2a1d12}}
+:root[data-theme="dark"]{--bg:#0c1220;--soft:#131b2e;--text:#eef2fa;--muted:#a6b1c8;--border:#25314d;--peach:#2a1d12}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:#fff;border-bottom:1px solid #e4e8f0;z-index:10}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:68px;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mark{width:40px;height:40px;border-radius:11px;background:var(--blue);display:grid;place-items:center;color:var(--orange);font-size:1.3rem;box-shadow:0 4px 10px rgba(30,58,138,.35)}
+.bt b{display:block;font-size:1.25rem;line-height:1.1;color:var(--blue)}.bt b i{font-style:normal;color:var(--orange)}
+.bt small{font-size:.62rem;color:#6b7589;letter-spacing:.08em}
+nav{display:flex;gap:18px;align-items:center}
+nav a{color:#101828;text-decoration:none;font-weight:600;font-size:.92rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--orange);color:#fff;padding:13px 22px;border-radius:14px;font-weight:700;text-decoration:none;border:0;font-size:1rem;cursor:pointer;box-shadow:0 6px 16px rgba(255,107,0,.3);font-family:inherit}
+.btn:hover{background:#e65f00}
+.btn.sm{padding:10px 16px;font-size:.92rem}
+.btn.full{width:100%}
+.btn.ghost{background:transparent;border:2px solid rgba(255,255,255,.6);box-shadow:none}
+.menu{display:none;background:none;border:1px solid #e4e8f0;color:#101828;border-radius:8px;font-size:1.3rem;padding:2px 10px;cursor:pointer}
+@media(max-width:820px){.menu{display:block}nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid #e4e8f0;flex-direction:column;padding:16px 20px;align-items:flex-start}nav.open{display:flex}}
+.tabs{background:var(--navy);padding:12px 0;position:sticky;top:calc(68px + env(safe-area-inset-top,0px));z-index:9}
+.tabs .wrap{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.tab{flex:none;background:#1c2740;color:#cdd6ea;border:1px solid #2a3858;padding:9px 16px;border-radius:30px;font-weight:700;cursor:pointer;font-size:.92rem;font-family:inherit}
+.tab.on{background:var(--orange);color:#fff;border-color:var(--orange)}
+.hero{background:radial-gradient(circle at 20% 0%,#2a1d3f 0%,var(--navy) 55%);color:#fff;padding:44px 0 36px;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #7a4a1f;background:rgba(255,107,0,.1);color:var(--orange2);padding:7px 16px;border-radius:30px;font-weight:700;font-size:.9rem}
+.hero h1{font-size:clamp(2rem,6.5vw,3.2rem);line-height:1.1;margin:18px 0 12px}
+.hero h2{color:var(--orange2);font-size:clamp(1.1rem,3.6vw,1.5rem);margin:0 0 16px;font-weight:600}
+.hero p{max-width:640px;margin:0 auto 20px;color:#c4cde0}
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:22px}
+.chip{border:1px solid #2c3a5c;border-radius:30px;padding:8px 16px;font-size:.9rem;background:rgba(255,255,255,.04)}
+.chip b{color:#fff}
+.bignum{display:block;font-size:clamp(2rem,8vw,2.8rem);font-weight:800;margin:6px 0 14px;color:#fff;text-decoration:none}
+.hero .btn{min-width:260px}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:34px;text-align:left}
+.trust div{background:#1a2438;border:1px solid #2a3858;border-radius:16px;padding:16px;display:flex;gap:14px;align-items:center}
+.trust i{font-style:normal;width:46px;height:46px;border-radius:12px;background:#4a2f1d;display:grid;place-items:center;font-size:1.3rem;flex:none}
+.trust b{display:block}.trust span{color:#a9b4cc;font-size:.88rem}
+section{padding:50px 0}
+.badge{display:inline-block;background:var(--peach);color:#c2410c;font-weight:800;font-size:.8rem;letter-spacing:.07em;padding:7px 18px;border-radius:30px}
+h2.t{font-size:clamp(1.6rem,5vw,2.2rem);margin:14px 0 10px;text-align:center;line-height:1.2}
+.ctr{text-align:center}
+.lead{color:var(--muted);max-width:620px;margin:0 auto 28px}
+.lead a{color:#e65100;font-weight:800;text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--soft);border:1px solid var(--border);border-radius:22px;padding:24px;box-shadow:0 6px 18px rgba(16,24,40,.05)}
+.card .tag{display:inline-block;background:var(--blue);color:#fff;font-size:.72rem;font-weight:800;padding:5px 12px;border-radius:20px;margin-bottom:10px}
+.card h3{margin:0 0 8px;font-size:1.2rem}
+.card p{margin:0 0 16px;color:var(--muted);font-size:.95rem}
+.card .num{display:block;text-align:center;font-weight:800;color:var(--blue);font-size:1.15rem;border-top:1px solid var(--border);padding-top:14px;margin-bottom:12px;text-decoration:none}
+:root[data-theme="dark"] .card .num{color:#8fb0ff}
+@media (prefers-color-scheme:dark){.card .num{color:#8fb0ff}}
+.guar{background:var(--blue);color:#fff}
+.guar .wrap{max-width:760px}
+.guar h2{font-size:clamp(1.7rem,5.5vw,2.4rem);margin:14px 0}
+.guar .badge{background:rgba(255,255,255,.12);color:var(--orange2);border:1px solid rgba(255,255,255,.25)}
+.gnum{display:block;color:var(--orange2);font-weight:800;font-size:2rem;margin:16px 0 10px;text-decoration:none}
+.chk{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.chk li{background:#12203f;border:1px solid #2a3b6b;border-radius:16px;padding:16px 18px;display:flex;gap:14px;align-items:center}
+.chk li::before{content:"✓";flex:none;width:30px;height:30px;border:2px solid var(--orange);color:var(--orange);border-radius:50%;display:grid;place-items:center;font-weight:800}
+.issue{background:var(--soft);border:1px solid var(--border);border-radius:22px;padding:22px;margin-bottom:16px}
+.issue h3{color:#e65100;margin:0 0 12px;font-size:1.25rem}
+.issue h3::before{content:"⚠️ ";font-size:1rem}
+.sym{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:13px 15px;margin-bottom:10px}
+.sol{background:var(--peach);border:1px solid #ffd9b8;border-radius:14px;padding:13px 15px}
+.sol b{color:#b34700}
+:root[data-theme="dark"] .sol{border-color:#5a3a1f}
+.faq{max-width:720px;margin:0 auto}
+details{background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:18px 20px;margin-bottom:12px;box-shadow:0 4px 12px rgba(16,24,40,.05)}
+summary{font-weight:800;cursor:pointer;font-size:1.05rem}
+details p{margin:12px 0 0;color:var(--muted)}
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{font-size:clamp(1.8rem,6vw,2.6rem);margin:0 0 10px}
+.dl{max-width:520px;margin:24px auto 0;border:1px solid #243150;border-radius:26px;padding:28px 22px;background:#0f1729}
+.dl small{color:var(--orange2);font-weight:800;letter-spacing:.12em}
+.dl .bignum{margin:10px 0 18px}
+.lines{max-width:520px;margin:22px auto 0;display:grid;gap:8px}
+.lines a{display:flex;justify-content:space-between;background:#1a2438;border:1px solid #2a3858;border-radius:12px;padding:12px 16px;color:#fff;text-decoration:none;font-weight:700}
+.lines a span{color:var(--orange2)}
+form{max-width:480px;margin:0 auto;display:grid;gap:12px}
+input,select,textarea{width:100%;padding:13px;border-radius:12px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:inherit}
+.ok{display:none;text-align:center;color:#e65100;font-weight:700}
+footer{background:#0a101d;color:#b9c3d9;padding:40px 0 20px}
+footer h4{color:#fff;letter-spacing:.1em;margin:22px 0 12px;font-size:1rem}
+footer a{display:block;color:#b9c3d9;text-decoration:none;padding:5px 0;cursor:pointer}
+footer .ph{color:var(--orange);font-weight:800;font-size:1.15rem;margin-bottom:10px}
+footer .ph small{display:block;color:#8e99b3;font-weight:400;font-size:.9rem}
+footer .dis{border-top:1px solid #1f2a44;margin-top:24px;padding-top:18px;font-size:.85rem;color:#7d88a3}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--blue);padding:12px 14px calc(12px + env(safe-area-inset-bottom,0px));z-index:30}
+.bar .btn{width:100%;padding:16px;font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;border-radius:16px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:50;align-items:flex-end;justify-content:center}
+.modal.open{display:flex}
+.sheet{background:var(--bg);width:100%;max-width:460px;border-radius:22px 22px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px))}
+@media(min-width:600px){.modal{align-items:center}.sheet{border-radius:22px}}
+.sheet h3{margin:0 0 14px;text-align:center}
+.sheet a.item{display:flex;justify-content:space-between;align-items:center;padding:15px;border:1px solid var(--border);border-radius:14px;margin-bottom:8px;text-decoration:none;color:var(--text);font-weight:700}
+.sheet a.item span{color:#e65100}
+.close{width:100%;margin-top:6px;background:var(--soft);color:var(--text);border:0;padding:13px;border-radius:14px;font-weight:700;cursor:pointer;font-family:inherit}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#top"><span class="mark">◈</span><span class="bt"><b>Home<i>Hero</i></b><small>LICENSED HOME SERVICES</small></span></a>
+<nav id="nav"><a href="#top">Services</a><a href="#faq">FAQ</a><a href="#quote">Get Quote</a><a href="#contact">Contact</a></nav>
+<a class="btn sm" data-open href="#">📞 Call Now</a>
+<button class="menu" id="menu" aria-label="Menu">☰</button>
+</div></header>
+
+<div class="tabs" id="top"><div class="wrap" id="tabs"></div></div>
+<div id="page"></div>
+
+<section id="quote"><div class="wrap">
+<div class="ctr"><span class="badge">FREE ESTIMATE</span></div>
+<h2 class="t">Request a Free Estimate</h2>
+<p class="lead ctr">Prefer to message? Send details and we reply on WhatsApp.</p>
+<form id="f">
+<input id="n" required placeholder="Full name">
+<input id="p" required type="tel" placeholder="Phone number">
+<select id="s" required></select>
+<textarea id="m" rows="3" placeholder="Describe the problem"></textarea>
+<button class="btn full" type="submit">💬 Send on WhatsApp</button>
+<div class="ok" id="ok">Opening WhatsApp... we will reply shortly.</div>
+</form>
+</div></section>
+
+<section class="cta" id="contact"><div class="wrap">
+<h2>Need Immediate Assistance?</h2>
+<p style="color:#c4cde0">Call us now and we'll connect you directly with our service team.</p>
+<div class="dl"><small id="dlTitle"></small><a class="bignum" id="dlNum" href="#"></a><a class="btn full" id="dlBtn" href="#">📞 Call Now</a></div>
+<div class="lines" id="lines"></div>
+</div></section>
+
+<footer><div class="wrap">
+<div class="bt" style="display:flex;gap:10px;align-items:center"><span class="mark">◈</span><b style="color:#fff;font-size:1.3rem">Home<i style="color:var(--orange);font-style:normal">Hero</i></b></div>
+<p>HomeHero connects homeowners directly with licensed, local service professionals. Available 24/7 for HVAC, plumbing, roofing, locksmith and pest control.</p>
+<h4>OUR SERVICES</h4><div id="fs"></div><a data-open>📞 <span style="color:var(--orange);font-weight:700">Call Now for Assistance</span></a>
+<h4>COMPANY</h4><a href="#top">About Us</a><a href="#contact">Contact Us</a><a href="#top">Privacy Policy</a><a href="#top">Terms of Service</a>
+<h4>DIRECT PHONE LINES</h4><div id="fp"></div>
+<div class="dis"><b>Disclaimer:</b> HomeHero is an independent home services network connecting homeowners with qualified local technicians. All services are performed by state-licensed, insured, independent contractor technicians.<p>© 2026 HomeHero. All rights reserved.</p></div>
+</div></footer>
+
+<div class="bar"><button class="btn" data-open>📞 Call Now – Direct Service Lines</button></div>
+
+<div class="modal" id="modal"><div class="sheet"><h3>Choose a service to call</h3><div id="list"></div><button class="close" id="close">Close</button></div></div>
+
+<script>
+// ===== EDIT YOUR DETAILS HERE =====
+var WHATSAPP="10000000000"; // WhatsApp number, digits only (country code first)
+var S=[
+{id:"hvac",name:"HVAC",icon:"❄️",phone:"2123659899",pill:"24/7 Cooling & Heating",h1:"HVAC Repair & Installation",h2:"Heating, Cooling & Air Quality Solutions for Year-Round Comfort",intro:"When your heating or cooling system fails, we connect you with fast response teams. Certified HVAC technicians repair all major brands including Trane, Carrier, Lennox, Goodman and Rheem.",
+ subs:[["AC Repair & Troubleshooting","Fast diagnosis of warm air, strange noises, frozen coils and compressor issues.","MOST REQUESTED"],["New AC Installation & Replacement","High-efficiency SEER2 central AC and heat pump installs with manufacturer warranties.","MOST REQUESTED"],["Furnace & Heating Repair","Emergency igniter repair, heat exchanger inspection and gas valve adjustments."],["Ductless Mini-Split Systems","Multi-zone heating and cooling for additions, garages and homes without ducts."],["Duct Cleaning & Indoor Air Quality","Deep duct sanitation, HEPA filtration, UV lights and mold removal."],["Smart Thermostat Installation","Professional setup and wiring of Ecobee, Nest and Honeywell controls."]],
+ issues:[["AC Blowing Warm Air","Unit runs nonstop but the house keeps getting warmer.","Technicians check refrigerant for leaks, inspect the capacitor, clean condenser coils or clear drain lines."],["Furnace Not Igniting or Shutting Off","Cold air from vents in winter, or the furnace clicks without starting.","Flame sensor cleaning, igniter replacement, blower capacitor replacement or pressure switch test."],["Frequent Short-Cycling","System turns on and off every few minutes, raising electric bills.","Thermostat recalibration, airflow restriction check or sizing evaluation."],["Burning or Squealing Sounds","Loud screeching, metal grinding or an electrical burning smell from vents.","Fan belt replacement, motor bearing lubrication or immediate electrical fault shutdown and repair."]],
+ why:["Same-day service with 24/7 availability","EPA & NATE certified master HVAC technicians","Transparent upfront service details, no hidden surprises","Manufacturer warranties on new unit installations","Comprehensive multi-point safety and efficiency inspection"],
+ faq:[["How quickly can an HVAC technician arrive?","For heating or AC failures, our local team arrives in 30 to 45 minutes on average across supported zip codes."],["How often should I service my heating and AC?","Twice a year: once before summer and once before winter."],["What HVAC brands do you service?","All major brands including Trane, Carrier, Lennox, Goodman and Rheem."]]},
+{id:"plumbing",name:"Plumbing",icon:"🔧",phone:"8333802382",pill:"24/7 Plumbing Service",h1:"Plumbing Services",h2:"Master Plumbers for Leak Repair, Drain Cleaning & Water Heaters",intro:"Plumbing issues can cause severe water damage in minutes. We provide rapid, licensed plumbing across the USA, from backed-up sewer lines to leaking water heaters and clogged drains.",
+ subs:[["Emergency Burst Pipe & Leak Repair","Rapid water shutoff, pipe patching and full copper/PEX repiping to stop active leaks.","MOST REQUESTED"],["Drain Cleaning & Unclogging","Kitchen, bathroom and main line clogs cleared with professional equipment.","MOST REQUESTED"],["Water Heater Repair & Install","Tank and tankless water heater repair, flushing and replacement."],["Sewer Line Repair","Camera inspection, backup clearing and sewer line repair."],["Fixture & Toilet Repair","Faucets, toilets, garbage disposals and shut-off valves fixed or replaced."]],
+ issues:[["Burst or Leaking Pipe","Water on floors, wet walls or a sudden drop in water pressure.","Shut off the main valve, then call us: we locate the leak and repair or replace the pipe section."],["Slow or Clogged Drain","Water drains slowly or gurgles, with bad smells.","Drain snaking or hydro-jetting clears the blockage and we check for deeper issues."],["No Hot Water","Water stays cold or only lukewarm.","Thermostat, heating element or burner repair, or a full water heater replacement."]],
+ why:["Same-day service with 24/7 availability","Licensed and insured master plumbers","Clear upfront pricing before work begins","Quality parts with warranty","Clean, respectful work in your home"],
+ faq:[["How fast can a plumber arrive?","Emergency calls are prioritised and local plumbers typically arrive within the hour."],["What should I do for a burst pipe?","Turn off your main water valve right away, then call our plumbing line."],["Do you handle water heaters?","Yes, repair, maintenance and replacement for tank and tankless units."]]},
+{id:"roofing",name:"Roofing",icon:"🏠",phone:"",pill:"Roof Repair & Replacement",h1:"Roofing Services",h2:"Leak Repair, Storm Damage & Full Roof Replacement",intro:"From a small leak to full roof replacement, licensed roofers protect your home. Request a free estimate and we will get back to you.",
+ subs:[["Roof Leak Repair","Find and fix leaks before they damage ceilings and walls.","MOST REQUESTED"],["Roof Replacement","Asphalt shingle, metal and tile roof replacement with warranty."],["Storm Damage Repair","Fast tarping and repair after wind, hail or fallen trees."],["Roof Inspection","Detailed inspection with photos and a clear repair plan."]],
+ issues:[["Water Stains on Ceiling","Brown spots or dripping after rain.","Inspection to locate the leak, then flashing, shingle or underlayment repair."],["Missing or Curling Shingles","Shingles lifting, cracking or blown off.","Shingle replacement and sealing to prevent further damage."]],
+ why:["Free roof estimates","Licensed and insured roofers","Quality materials with warranty","Storm damage help","Clean job site every day"],
+ faq:[["Do you give free estimates?","Yes. Fill the form and we will contact you."],["How long does a roof replacement take?","Most homes take 1 to 3 days depending on size and weather."]]},
+{id:"locksmith",name:"Locksmith",icon:"🔑",phone:"8338590254",pill:"24/7 Locksmith Service",h1:"Locksmith Services",h2:"Fast Lockout Help, Lock Changes & Key Replacement",intro:"Locked out? Licensed local locksmiths respond fast, day or night, with non-destructive entry and secure lock solutions.",
+ subs:[["Emergency Lockout Service","Get back into your home or car quickly without damage.","MOST REQUESTED"],["Lock Change & Rekey","New locks or rekeying after a move, loss or break-in."],["Key Replacement & Duplication","Spare keys, broken key extraction and replacement keys."],["Smart Lock Installation","Keypad and smart lock setup for better security."]],
+ issues:[["Locked Out of Home","Keys lost, locked inside or the door will not open.","Non-destructive entry by a licensed locksmith, usually within minutes of arrival."],["Broken Key in Lock","Key snapped inside the cylinder.","Key extraction and replacement key cut on site."]],
+ why:["24/7 availability","Licensed, insured and background-checked","Non-destructive entry methods","Upfront service details","Fast local response"],
+ faq:[["How fast can a locksmith arrive?","Typically within 30 to 45 minutes in covered areas."],["Will you damage my lock?","We use non-destructive methods whenever possible."]]},
+{id:"pest",name:"Pest Control",icon:"🐜",phone:"8337485523",pill:"24/7 Pest Control",h1:"Pest Control Services",h2:"Safe Removal of Insects, Rodents & Wildlife",intro:"Get rid of pests fast with safe, effective treatments by licensed technicians, plus follow-up checks to keep them away.",
+ subs:[["Ant & Roach Control","Targeted treatment for kitchens, baths and entry points.","MOST REQUESTED"],["Rodent Removal","Mice and rat trapping, sealing and cleanup."],["Termite Inspection & Treatment","Inspection and protection for your home structure."],["Bed Bug Treatment","Complete treatment with follow-up visits."],["Mosquito & Outdoor Pests","Yard treatments for mosquitoes, ticks and more."]],
+ issues:[["Roaches in the Kitchen","Seeing roaches at night or finding droppings.","Gel baits and perimeter treatment, with follow-up checks."],["Mice in the Walls","Scratching sounds, droppings or chewed wires.","Trapping, exclusion sealing and cleanup of affected areas."]],
+ why:["Same-day service available","Licensed pest technicians","Family and pet-safe options","Follow-up visits included","Clear upfront details"],
+ faq:[["Is treatment safe for kids and pets?","We offer family and pet-safe options. Tell us when you call."],["How soon can you come?","Many visits are same day, depending on your location."]]}
+];
+// ==================================
+function fmt(p){return p.slice(0,3)+"-"+p.slice(3,6)+"-"+p.slice(6)}
+function callBtn(x,cls){return x.phone?'<a class="btn '+cls+'" href="tel:+1'+x.phone+'">📞 Call Now</a>':'<a class="btn '+cls+'" href="#quote" data-book="'+x.name+'">Get Free Quote</a>'}
+function numTxt(x){return x.phone?fmt(x.phone):"Free Quote"}
+var tabs=document.getElementById('tabs'),page=document.getElementById('page'),sel=document.getElementById('s');
+sel.innerHTML='<option value="">Select service</option>';
+S.forEach(function(x,i){
+ tabs.insertAdjacentHTML('beforeend','<button class="tab" data-i="'+i+'">'+x.icon+' '+x.name+'</button>');
+ sel.insertAdjacentHTML('beforeend','<option>'+x.name+'</option>');
+ document.getElementById('list').insertAdjacentHTML('beforeend',x.phone?'<a class="item" href="tel:+1'+x.phone+'">'+x.icon+' '+x.name+'<span>'+fmt(x.phone)+'</span></a>':'');
+ document.getElementById('fs').insertAdjacentHTML('beforeend','<a data-go="'+i+'">'+x.name+' Services</a>');
+ if(x.phone){document.getElementById('fp').insertAdjacentHTML('beforeend','<div class="ph"><small>'+x.name+' Service Line:</small><a href="tel:+1'+x.phone+'" style="color:inherit;padding:0">'+fmt(x.phone)+'</a></div>');
+ document.getElementById('lines').insertAdjacentHTML('beforeend','<a href="tel:+1'+x.phone+'">'+x.icon+' '+x.name+'<span>'+fmt(x.phone)+'</span></a>')}
+});
+function show(i){
+ var x=S[i];
+ document.querySelectorAll('.tab').forEach(function(t,k){t.classList.toggle('on',k==i)});
+ var subs=x.subs.map(function(c){return '<div class="card">'+(c[2]?'<span class="tag">'+c[2]+'</span>':'')+'<h3>'+c[0]+'</h3><p>'+c[1]+'</p>'+(x.phone?'<a class="num" href="tel:+1'+x.phone+'">'+fmt(x.phone)+'</a>':'')+callBtn(x,'full')+'</div>'}).join('');
+ var issues=x.issues.map(function(c){return '<div class="issue"><h3>'+c[0]+'</h3><div class="sym"><b>Symptom:</b> '+c[1]+'</div><div class="sol"><b>Our Solution:</b> '+c[2]+'</div></div>'}).join('');
+ var faq=x.faq.map(function(c){return '<details><summary>'+c[0]+'</summary><p>'+c[1]+'</p></details>'}).join('');
+ page.innerHTML='<div class="hero"><div class="wrap"><span class="pill">'+x.icon+' '+x.pill+'</span><h1>'+x.h1+'</h1><h2>'+x.h2+'</h2><p>'+x.intro+'</p>'
+ +'<div class="chips"><span class="chip">Availability: <b>24/7 Direct Phone Line</b></span><span class="chip">Coverage: <b>Licensed & Insured Professionals</b></span></div>'
+ +(x.phone?'<a class="bignum" href="tel:+1'+x.phone+'">'+fmt(x.phone)+'</a>':'')+callBtn(x,'')
+ +'<div class="trust"><div><i>🛡️</i><p style="margin:0"><b>Licensed & Insured</b><span>$2M Liability Coverage</span></p></div><div><i>✅</i><p style="margin:0"><b>Background Checked</b><span>100% Vetted Technicians</span></p></div><div><i>🏅</i><p style="margin:0"><b>Satisfaction Guarantee</b><span>Done Right Or It\'s Free</span></p></div><div><i>⏱️</i><p style="margin:0"><b>24/7 Emergency</b><span>30-Min Average Arrival</span></p></div></div></div></div>'
+ +'<section><div class="wrap"><div class="ctr"><span class="badge">SPECIALIZED SOLUTIONS</span></div><h2 class="t">Our '+x.name+' Services</h2><p class="lead ctr">'+(x.phone?'Call our dedicated service line directly at <a href="tel:+1'+x.phone+'">'+fmt(x.phone)+'</a> for fast support.':'Request a free quote and we will get back to you.')+'</p><div class="grid">'+subs+'</div></div></section>'
+ +'<section class="guar"><div class="wrap"><span class="badge">THE GUARANTEE</span><h2>Why Choose Us for '+x.h1+'?</h2><p>We connect you with experienced master technicians backed by our 100% satisfaction guarantee.</p>'+(x.phone?'<a class="gnum" href="tel:+1'+x.phone+'">'+fmt(x.phone)+'</a>':'')+callBtn(x,'')+'<ul class="chk">'+x.why.map(function(w){return '<li>'+w+'</li>'}).join('')+'</ul></div></section>'
+ +'<section><div class="wrap"><div class="ctr"><span class="badge">TROUBLESHOOTING GUIDE</span></div><h2 class="t">Common '+x.name+' Issues We Fix</h2><p class="lead ctr">Recognize any of these warning signs? '+(x.phone?'Call us at <a href="tel:+1'+x.phone+'">'+fmt(x.phone)+'</a> for immediate help.':'Request a quote today.')+'</p>'+issues+'</div></section>'
+ +'<section style="background:var(--soft)" id="faq"><div class="wrap"><div class="ctr"><span class="badge">GOT QUESTIONS?</span></div><h2 class="t">Frequently Asked Questions</h2><div class="faq">'+faq+'</div></div></section>';
+ document.getElementById('dlTitle').textContent=(x.name+" DIRECT LINE").toUpperCase();
+ var dn=document.getElementById('dlNum'),db=document.getElementById('dlBtn');
+ dn.textContent=numTxt(x);dn.href=x.phone?"tel:+1"+x.phone:"#quote";
+ db.href=x.phone?"tel:+1"+x.phone:"#quote";db.textContent=x.phone?"📞 Call Now":"Get Free Quote";
+ sel.value=x.name;
+ page.querySelectorAll('[data-book]').forEach(function(a){a.addEventListener('click',function(){sel.value=a.dataset.book})});
+ try{history.replaceState(null,"","#"+x.id)}catch(e){}
+}
+tabs.addEventListener('click',function(e){var b=e.target.closest('.tab');if(b){show(+b.dataset.i);window.scrollTo({top:0,behavior:'smooth'})}});
+document.getElementById('fs').addEventListener('click',function(e){var a=e.target.closest('[data-go]');if(a){show(+a.dataset.go);window.scrollTo({top:0,behavior:'smooth'})}});
+var modal=document.getElementById('modal');
+document.querySelectorAll('[data-open]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();modal.classList.add('open')})});
+document.getElementById('close').onclick=function(){modal.classList.remove('open')};
+modal.addEventListener('click',function(e){if(e.target===modal)modal.classList.remove('open')});
+var nav=document.getElementById('nav');
+document.getElementById('menu').onclick=function(){nav.classList.toggle('open')};
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open')})});
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ var t="New request%0AName: "+encodeURIComponent(n.value)+"%0APhone: "+encodeURIComponent(p.value)+"%0AService: "+encodeURIComponent(s.value)+"%0AProblem: "+encodeURIComponent(m.value);
+ document.getElementById('ok').style.display='block';
+ window.open("https://wa.me/"+WHATSAPP+"?text="+t,"_blank");
+});
+var start=0;S.forEach(function(x,i){if(location.hash=="#"+x.id)start=i});
+show(start);
+</script>
+</body>
+</html>
